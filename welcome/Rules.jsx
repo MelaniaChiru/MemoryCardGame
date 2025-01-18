@@ -1,8 +1,14 @@
 const Rules = () => {
+    const backToHome = () => {
+        console.log("return to home");
+        document.querySelector("#Rules").style = "display:none";
+    }
+    
     return ( 
         <>
+        <section id="rules">
             <section>
-                <button>X</button>
+                <button onClick="backToHome">X</button>
             </section>
             <section id="text">
                 <h2>Welcome to Sprout Quest, a fun and engaging card-matching game where your memory and strategy help grow a beautiful plant!</h2>
@@ -33,6 +39,7 @@ const Rules = () => {
                         <li>Avoid Dirt Cards: While they don’t harm your progress, flipping fewer dirt cards will save you time and effort.</li>
                     </ul>
                 <p>Are you ready to test your memory and grow a gorgeous plant? Let the matching begin! 🌱</p>
+            </section>
             </section>
         </>
      );
