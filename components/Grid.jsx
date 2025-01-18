@@ -38,7 +38,14 @@ const Grid = ({tiles}) => {
 		}
 
 		function checkTiles() {
-			if(eventTile[0].target.id == eventTile[1].target.id) {
+			if(eventTile[0].target.id == eventTile[1].target.id && eventTile[0].target.id < 0) {
+				setTimeout(()=> {
+					eventTile[0].target.children[0].classList.add("hidden");
+					eventTile[1].target.children[0].classList.add("hidden");
+					count = 0;
+					eventTile = [];
+				}, 500);
+			}else if(eventTile[0].target.id == eventTile[1].target.id) {
 				console.log("it worked");
 				count = 0;
 				eventTile = [];
@@ -48,7 +55,7 @@ const Grid = ({tiles}) => {
 					eventTile[1].target.children[0].classList.add("hidden");
 					count = 0;
 					eventTile = [];
-				}, 2000);
+				}, 500);
 			}
 		}
 
