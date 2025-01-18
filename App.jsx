@@ -1,7 +1,10 @@
 const App = () => {
+	let icons = Level1();
 	return ( 
 		<>
 			<Tile id={1} icon="/icons/water_drop.svg"></Tile>
+
+			<Resources/>
 		</>
 	 );
 }
