@@ -1,8 +1,15 @@
 const Level1 = () => {
-    let iconList = [
-        {icon: "icons/water_drop.svg", qty: 1},
-        {icon: "icons/water_drop.svg", qty: 1},
-        {icon: "icons/water_drop.svg", qty: 1}
-    ];
-    return (iconList);
+    return {
+        tiles: [
+            {icon: "/icons/water_drop.svg", id: 1, nbTiles: 2},
+            {icon: "/icons/tool.svg", id: 2, nbTiles: 2},
+            {icon: "/icons/sun.svg", id: 3, nbTiles: 2},
+            {icon: "/icons/dirt.svg", id: 4, nbTiles: 3},
+        ],
+        resources: [
+            {icon: "/icons/water_drop.svg", qty: 1},
+            {icon: "/icons/tool.svg", qty: 1},
+            {icon: "/icons/sun.svg", qty: 1}
+        ]
+    }
 }
