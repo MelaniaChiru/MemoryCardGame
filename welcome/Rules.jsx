@@ -1,6 +1,7 @@
 const Rules = () => {
     const backToHome = () => {
         console.log("return to home");
+        document.querySelector("#Rules").style = "display:none";
     }
     
     return ( 
