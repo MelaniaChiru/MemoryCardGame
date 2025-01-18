@@ -9,6 +9,7 @@ const LevelPage = () => {
 			</div>
 			<div className="side-column">
 				<Resources resources={resources}></Resources>
+				<Plant></Plant>
 			</div>
 		</div>
 	 );
