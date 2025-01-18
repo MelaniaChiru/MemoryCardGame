@@ -8,12 +8,16 @@ const WelcomePage = (props) => {
                 <button onClick={startGame} class="button">Start</button>
                 <button onClick={showRules} class="button">Rules</button>
             </div>
-            {rulesDisplayed && <Rules></Rules>}
+            {rulesDisplayed && <Rules classes="pop-up rules" hideRulesFunc={hideRules}></Rules>}
         </div>
     );
 
     function showRules(){
         displayRules(true);
+    }
+
+    function hideRules(){
+        displayRules(false);
     }
 
     /**
