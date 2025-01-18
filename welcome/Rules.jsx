@@ -1,6 +1,7 @@
 const Rules = () => {
     return ( 
         <>
+        <section id="rules">
             <section>
                 <button>X</button>
             </section>
@@ -33,6 +34,7 @@ const Rules = () => {
                         <li>Avoid Dirt Cards: While they don’t harm your progress, flipping fewer dirt cards will save you time and effort.</li>
                     </ul>
                 <p>Are you ready to test your memory and grow a gorgeous plant? Let the matching begin! 🌱</p>
+            </section>
             </section>
         </>
      );
