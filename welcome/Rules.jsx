@@ -1,9 +1,13 @@
 const Rules = () => {
+    const backToHome = () => {
+        console.log("return to home");
+    }
+    
     return ( 
         <>
         <section id="rules">
             <section>
-                <button>X</button>
+                <button onClick="backToHome">X</button>
             </section>
             <section id="text">
                 <h2>Welcome to Sprout Quest, a fun and engaging card-matching game where your memory and strategy help grow a beautiful plant!</h2>
