@@ -10,26 +10,24 @@
 	box-sizing: border-box;
 }
 
-
-* {
-	margin: 0;
-	padding: 0;
-	font-family: "nunito";
-
-}
-
 .level-page{
 	display: flex;
-	/* background-color: rgba(255, 0, 0, .3); */
 	width: 100vw;
 	height: 100vh;
+	gap: 1rem;
 }
 
 /* Main column */
 .main-column{
+	flex: 5;
+	display: flex;
+	flex-direction: column;
 }
 
 header {
+	display: grid;
+	align-items: center;
+	flex: 2;
 	text-align: center;
 }
 
@@ -38,10 +36,12 @@ img{
 }
 
 .tiles-grid{
+	flex: 8;
 	display: grid;
+	align-items: center;
+	justify-items: center;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 1rem;
-	/* background-color: #82AC36; */
 	padding: 1rem;
 }
 
@@ -53,6 +53,46 @@ img{
 	display: grid;
 	align-items: center;
 	justify-content: center;
+}
+
+/* Resources column */
+.side-column {
+	flex: 3;
+	display: flex;
+	flex-direction: column;
+}
+
+.resources {
+
+}
+
+.resources h2 {
+	text-align: center;
+	padding: 1rem;
+}
+
+.icon-sec{
+	display: flex;
+	align-items: end;
+	gap: 0.5rem;
+}
+
+#sec-icon {
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+	padding: 0.3rem;
+}
+
+.plant {
+	flex: auto ;
+	display: grid;
+	align-items: end;
+	justify-items: center;
+}
+
+.plant img {
+	width: 50%;
 }
 
 /* global classes used for display */
