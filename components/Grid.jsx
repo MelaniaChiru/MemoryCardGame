@@ -1,4 +1,7 @@
 const Grid = ({tiles}) => {
+	let count = 0;
+	let t = [];
+	let eventTile = [];
 	return ( 
 		<div className="tiles-grid">
 			{hydrateTiles()}
@@ -17,8 +20,40 @@ const Grid = ({tiles}) => {
 		shuffleTiles(allTiles);
 
 		return allTiles.map(tile=>{
-			return (<Tile id={tile.id} icon={tile.icon}></Tile>);
+			return (<Tile onClick={(e)=>{tileHandler(e)}} id={tile.id} icon={tile.icon}></Tile>);
 		});
+
+		
+		function tileHandler(e) {
+			if(count < 2) {
+				e.target.children[0].classList.remove("hidden");
+				count = count + 1;
+				eventTile.push(e);
+				t.push(e.target.id);
+			}
+
+			if(count == 2) {
+				checkTiles();
+			}
+		}
+
+		function checkTiles() {
+			if(eventTile[0].target.id == eventTile[1].target.id) {
+				console.log("it worked");
+				count = 0;
+				eventTile = [];
+			}else {
+				setTimeout(()=> {
+					eventTile[0].target.children[0].classList.add("hidden");
+					eventTile[1].target.children[0].classList.add("hidden");
+					count = 0;
+					eventTile = [];
+				}, 2000);
+			}
+		}
+
+
+
 
 		/**
 		 * 'Shuffles' the tiles, so the order is different
