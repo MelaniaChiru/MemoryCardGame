@@ -1,16 +1,15 @@
-const Resources = () => {
-    let iconList = Level1();
+const Resources = ({resources}) => {
     return ( 
-        <>
+        <div className="resources">
             <h2>Resources</h2>
             <sections id="sec-icon">
-                {iconList.map((icon)=>(
+                {resources.map((resource)=>(
                     <section class="icon-sec">
-                        <img src={icon.icon}/>
-                        <section class="qty">x{icon.qty}</section>
+                        <img src={resource.icon}/>
+                        <section class="qty">x{resource.qty}</section>
                     </section>
                 ))}
             </sections>
-        </>
+        </div>
      );
 }
