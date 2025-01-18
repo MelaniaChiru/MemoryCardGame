@@ -1,9 +1,9 @@
 const App = () => {
-	let icons = Level1();
+	const [GameStarted, startGame] = React.useState(false);
 	return ( 
 		<>
-			<WelcomePage></WelcomePage>
-			<LevelPage></LevelPage>
+			{!GameStarted && <WelcomePage startGame={startGame}></WelcomePage>}
+			{GameStarted && <LevelPage></LevelPage>}
 		</>
 	 );
 }

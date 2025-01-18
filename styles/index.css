@@ -10,10 +10,90 @@
 	box-sizing: border-box;
 }
 
+/* buttons */
+.button {
+	color: #22290F;
+	border: 1px solid #22290F;
+	padding: 1rem 2rem;
+	font-size: 1.5rem;
+	background-color: transparent;
+}
+
+.button:hover {
+	background-color: #CFDFA5;
+}
+
+.button--small:hover {
+	background-color: transparent;
+}
+
+.button--small {
+	border: none;
+	background-color: transparent;
+	padding: 0.1rem;
+	height: 4rem;
+	aspect-ratio: 1;
+	display: grid;
+	align-items: center;
+	justify-items: center;
+}
+
+.buttons {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+/* Welcome page */
+.welcome-page {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 5rem;
+	background-color: #E0E8C5;
+}
+
+.welcome-page h1 {
+	color: #22290F;
+	font-size: 4rem;
+	text-align: center;
+}
+
 .level-page{
 	display: flex;
 	width: 100vw;
 	height: 100vh;
+	gap: 1rem;
+}
+
+.pop-up {
+	border: 1px solid #22290F;
+	/* margin: 3rem 5rem; */
+	padding: 2rem;
+	border-radius: 15px;
+	background-color: #D9CBAE;
+	position: absolute;
+	overflow: scroll;
+	width: 80%;
+	height: 60%;
+}
+
+.button--close {
+	position: sticky;
+	top: 1px;
+}
+
+.rules {
+	display: flex;
+	flex-direction: row-reverse;
+}
+
+#text {
+	display: flex;
+	flex-direction: column;
 	gap: 1rem;
 }
 
