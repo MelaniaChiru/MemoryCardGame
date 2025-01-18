@@ -1,15 +1,7 @@
-const Rules = () => {
-    const backToHome = () => {
-        console.log("return to home");
-        document.querySelector("#Rules").style = "display:none";
-    }
-    
+const Rules = ({classes, hideRulesFunc}) => {    
     return ( 
-        <>
-        <section id="rules">
-            <section>
-                <button onClick="backToHome">X</button>
-            </section>
+        <section id="rules" class={classes}>
+            <button onClick={hideRulesFunc} class="button button--small button--close" title="close rules">X</button>
             <section id="text">
                 <h2>Welcome to Sprout Quest, a fun and engaging card-matching game where your memory and strategy help grow a beautiful plant!</h2>
                 <h3>Objective:</h3>
@@ -40,7 +32,6 @@ const Rules = () => {
                     </ul>
                 <p>Are you ready to test your memory and grow a gorgeous plant? Let the matching begin! 🌱</p>
             </section>
-            </section>
-        </>
+        </section>
      );
 }
