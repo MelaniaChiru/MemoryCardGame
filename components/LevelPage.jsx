@@ -72,24 +72,24 @@ const LevelPage = () => {
             // Handle matching for level 1
             if (id === '1') { // water
                 setResources(prevResources => prevResources.map(resource => {
-                    if (resource.icon === "/icons/water_drop_gray.svg") {
-                        return { ...resource, icon: "/icons/water_drop.svg" };
+                    if (resource.icon === "icons/water_drop_gray.svg") {
+                        return { ...resource, icon: "icons/water_drop.svg" };
                     }
                     return resource;
                 }));
             }
             if (id === '2') { // tool
                 setResources(prevResources => prevResources.map(resource => {
-                    if (resource.icon === "/icons/tool_gray.svg") {
-                        return { ...resource, icon: "/icons/tool.svg" };
+                    if (resource.icon === "icons/tool_gray.svg") {
+                        return { ...resource, icon: "icons/tool.svg" };
                     }
                     return resource;
                 }));
             }
             if (id === '3') { // sun
                 setResources(prevResources => prevResources.map(resource => {
-                    if (resource.icon === "/icons/sun_gray.svg") {
-                        return { ...resource, icon: "/icons/sun.svg" };
+                    if (resource.icon === "icons/sun_gray.svg") {
+                        return { ...resource, icon: "icons/sun.svg" };
                     }
                     return resource;
                 }));
@@ -110,24 +110,24 @@ const LevelPage = () => {
             let updatedResource = { ...resource };
 
             // Handle water icon updates
-            if (waterPairs === 1 && resource.icon === "/icons/water_drop_gray.svg") {
-                updatedResource.icon = "/icons/water_drop_half.svg";
-            } else if (waterPairs === 2 && resource.icon === "/icons/water_drop_half.svg") {
-                updatedResource.icon = "/icons/water_drop.svg";
+            if (waterPairs === 1 && resource.icon === "icons/water_drop_gray.svg") {
+                updatedResource.icon = "icons/water_drop_half.svg";
+            } else if (waterPairs === 2 && resource.icon === "icons/water_drop_half.svg") {
+                updatedResource.icon = "icons/water_drop.svg";
             }
 
             // Handle tool icon updates
-            if (toolPairs === 1 && resource.icon === "/icons/tool_gray.svg") {
-                updatedResource.icon = "/icons/tool_half.svg";
-            } else if (toolPairs === 2 && resource.icon === "/icons/tool_half.svg") {
-                updatedResource.icon = "/icons/tool.svg";
+            if (toolPairs === 1 && resource.icon === "icons/tool_gray.svg") {
+                updatedResource.icon = "icons/tool_half.svg";
+            } else if (toolPairs === 2 && resource.icon === "icons/tool_half.svg") {
+                updatedResource.icon = "icons/tool.svg";
             }
 
             // Handle sun icon updates
-            if (sunPairs === 1 && resource.icon === "/icons/sun_gray.svg") {
-                updatedResource.icon = "/icons/sun_half.svg";
-            } else if (sunPairs === 2 && resource.icon === "/icons/sun_half.svg") {
-                updatedResource.icon = "/icons/sun.svg";
+            if (sunPairs === 1 && resource.icon === "icons/sun_gray.svg") {
+                updatedResource.icon = "icons/sun_half.svg";
+            } else if (sunPairs === 2 && resource.icon === "icons/sun_half.svg") {
+                updatedResource.icon = "icons/sun.svg";
             }
 
             return updatedResource;
