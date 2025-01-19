@@ -1,6 +1,6 @@
-const Grid = ({tiles, fillIcons}) => {
+const Grid = ({tiles, fillIcons, setPlantLevel}) => {
 	let count = 0;
-	let t = [];
+	let t = []; // the two tiles selected
 	let eventTile = [];
 
 	return ( 
@@ -50,6 +50,11 @@ const Grid = ({tiles, fillIcons}) => {
 
 			//colour appropriate icons in resources
 			fillIcons(eventTile[0].target.id);
+
+			//update level at which the plant is
+			setPlantLevel(prevLevel=>{
+				return prevLevel + 1;
+			});
 
 			count = 0;
 			eventTile = [];

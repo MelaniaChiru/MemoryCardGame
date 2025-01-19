@@ -77,17 +77,20 @@ const LevelPage = () => {
         }
     }
 
+    const [plantLevel, setPlantLevel] = React.useState(1);
+
+    
     return (
         <div className="level-page">
             <div className="main-column">
                 <Header level={level}></Header>
-                <Grid tiles={shuffledTiles} fillIcons={fillIcons}
-                />
+                <Grid tiles={shuffledTiles} fillIcons={fillIcons} setPlantLevel={setPlantLevel}/>
             </div>
             <div className="side-column">
                 <Resources resources={resources}></Resources>
-                <Plant></Plant>
+                <Plant plantLevel={plantLevel}></Plant>
             </div>
         </div>
+
     );
 };
