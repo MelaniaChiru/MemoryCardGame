@@ -20,12 +20,19 @@ const LevelPage = () => {
         const levelData = level === 1 ? Level1() : Level2();
         const tiles = levelData.tiles;
 
+        resetTiles();
+
         // Prepare resources and shuffle tiles
         setResources(levelData.resources.map(resource => ({ ...resource })));
         setShuffledTiles(shuffleTiles(tiles.flatMap(tile => Array(tile.nbTiles).fill(tile))));
         setPlantLevel(1);
         setLevelCompleted(false);
         setLevelPageClasses("level-page");
+    }
+
+    function resetTiles() {
+        let tiles = document.querySelectorAll(".tile");
+        tiles.forEach((tile)=> {tile.children[0].classList.add("hidden")});
     }
 
     // Shuffle tiles
