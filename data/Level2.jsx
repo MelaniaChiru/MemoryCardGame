@@ -7,9 +7,9 @@ const Level2 = () => {
             {icon: "/icons/dirt.svg", id: -1, nbTiles: 4}
         ],
         resources: [
-            {icon: "/icons/water_drop.svg", qty: 2},
-            {icon: "/icons/tool.svg", qty: 2},
-            {icon: "/icons/sun.svg", qty: 2}
+            { icon: "/icons/water_drop_gray.svg", qty: 2 },
+            { icon: "/icons/tool_gray.svg", qty: 2 },
+            { icon: "/icons/sun_gray.svg", qty: 2 }
         ]
     }
 }
