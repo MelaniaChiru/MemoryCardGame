@@ -54,6 +54,10 @@ const LevelPage = () => {
         setGameLevel(prev => prev + 1);
     }
 
+    function prevLevel() {
+        setGameLevel(prev => prev - 1);
+    }
+
     /**
      * Changes the colour of the icon corresponding with the tiles that just matched
      * @param {String} id id of the tiles that just matched
@@ -119,7 +123,7 @@ const LevelPage = () => {
             </div>
 
             {levelCompleted && (
-                <EndPage classes="pop-up pop-up--small" playAgain={playAgain} nextLevel={nextLevel} />
+                <EndPage classes="pop-up pop-up--small" playAgain={playAgain} nextLevel={nextLevel} prevLevel={prevLevel} gameLevel={gameLevel}/>
             )}
         </div>
     );
