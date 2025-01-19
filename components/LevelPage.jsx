@@ -1,9 +1,9 @@
 const LevelPage = () => {
     // data for tiles
-    let level = 1;
+    const [gameLevel, setGameLevel] = React.useState(1);
     let tiles;
     let [resources, setResources] = React.useState([{ icon: "/icons/water_drop_gray.svg", qty: 1 },]);
-    if(level == 1) {
+    if(gameLevel == 1) {
         tiles = Level1().tiles;
         [resources, setResources] = React.useState([Level1().resources[0], Level1().resources[1], Level1().resources[2]]);
     }else {
@@ -91,12 +91,17 @@ const LevelPage = () => {
         }
     }, [plantLevel]);
 
+    function playAgain() {
+        console.log("Play again");
+        setGameLevel(pervGameLevel=>{return pervGameLevel});
+    }
+
     
     return (
         <>
             <div className={levelPageClasses}>
                 <div className="main-column">
-                    <Header level={level}></Header>
+                    <Header level={gameLevel}></Header>
                     <Grid tiles={shuffledTiles} fillIcons={fillIcons} setPlantLevel={setPlantLevel}/>
                 </div>
                 <div className="side-column">
@@ -105,7 +110,7 @@ const LevelPage = () => {
                 </div>
             </div>
 
-           {levelCompleted && <EndPage classes="pop-up pop-up--small" playAgain={()=>{console.log("Play Again")}} nextLevel={()=>{console.log("Next Level")}}></EndPage>}
+           {levelCompleted && <EndPage classes="pop-up pop-up--small" playAgain={playAgain} nextLevel={()=>{console.log("Next Level")}}></EndPage>}
         </>
     );
 };
