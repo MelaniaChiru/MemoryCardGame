@@ -1,116 +1,88 @@
 const LevelPage = () => {
-    // data for tiles
+    // State for game level
     const [gameLevel, setGameLevel] = React.useState(1);
-    let tiles;
-    let [resources, setResources] = React.useState([{ icon: "/icons/water_drop_gray.svg", qty: 1 },]);
-    if(gameLevel == 1) {
-        tiles = Level1().tiles;
-        [resources, setResources] = React.useState([Level1().resources[0], Level1().resources[1], Level1().resources[2]]);
-    }else {
-        tiles = Level2().tiles;
-        [resources, setResources] = React.useState([Level2().resources[0], Level2().resources[1], Level2().resources[2]]);
-    }
 
-    // State to store shuffled tiles
+    // State for resources and shuffled tiles
+    const [resources, setResources] = React.useState([]);
     const [shuffledTiles, setShuffledTiles] = React.useState([]);
 
-    // Shuffle the tiles only when the page is loaded
+    // Plant and level completion state
+    const [plantLevel, setPlantLevel] = React.useState(1);
+    const [levelCompleted, setLevelCompleted] = React.useState(false);
+    const [levelPageClasses, setLevelPageClasses] = React.useState("level-page");
+
+    // Initialize the game state whenever the gameLevel changes
     React.useEffect(() => {
-        const allTiles = [];
+        initializeGame(gameLevel);
+    }, [gameLevel]);
 
-        tiles.forEach(tile => {
-            for (let i = 0; i < tile.nbTiles; i++) {
-                allTiles.push(tile);
-            }
-        });
+    function initializeGame(level) {
+        const levelData = level === 1 ? Level1() : Level2();
+        const tiles = levelData.tiles;
 
-        // Shuffle tiles
-        shuffleTiles(allTiles);
-
-        // Update shuffledTiles state
-        setShuffledTiles(allTiles);
-
-    }, []);
-
-    // Function to shuffle tiles
-    function shuffleTiles(tiles){
-        for (let i = tiles.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1)); // Get random index
-            [tiles[i], tiles[j]] = [tiles[j], tiles[i]]; // Swap elements
-        }
-    };
-
-    /**
-     * Changes the colour of the icon corresponding with the tiles that just matched
-     * @param {String} id id of the tiles that just matched
-     */
-    function fillIcons(id) {
-        if (id === '1') { // water
-            setResources(prevResources => {
-                return prevResources.map(resource => {
-                    if (resource.icon === "/icons/water_drop_gray.svg") {
-                        return { ...resource, icon: "/icons/water_drop.svg" };
-                    }
-                    return resource;
-                });
-            });
-        }
-        if (id === '2') { // tool
-            setResources(prevResources => {
-                return prevResources.map(resource => {
-                    if (resource.icon === "/icons/tool_gray.svg") {
-                        return { ...resource, icon: "/icons/tool.svg" };
-                    }
-                    return resource;
-                });
-            });
-        }
-        if (id === '3') { // sun
-            setResources(prevResources => {
-                return prevResources.map(resource => {
-                    if (resource.icon === "/icons/sun_gray.svg") {
-                        return { ...resource, icon: "/icons/sun.svg" };
-                    }
-                    return resource;
-                });
-            });
-        }
+        // Prepare resources and shuffle tiles
+        setResources(levelData.resources.map(resource => ({ ...resource })));
+        setShuffledTiles(shuffleTiles(tiles.flatMap(tile => Array(tile.nbTiles).fill(tile))));
+        setPlantLevel(1);
+        setLevelCompleted(false);
+        setLevelPageClasses("level-page");
     }
 
-    const [plantLevel, setPlantLevel] = React.useState(1);
+    // Shuffle tiles
+    function shuffleTiles(tiles) {
+        for (let i = tiles.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [tiles[i], tiles[j]] = [tiles[j], tiles[i]];
+        }
+        return tiles;
+    }
 
-    const [levelCompleted, setLevelCompleted] = React.useState(false);
-    const [levelPageClasses, setlevelPageClasses] = React.useState("level-page");
+    // Handle play again
+    function playAgain() {
+        initializeGame(gameLevel);
+    }
 
+    // Handle next level
+    function nextLevel() {
+        setGameLevel(prev => prev + 1);
+    }
+
+    // Update resources based on matched tiles
+    function fillIcons(id) {
+        setResources(prevResources =>
+            prevResources.map(resource => {
+                if (resource.icon.includes(`${id}_gray`)) {
+                    return { ...resource, icon: resource.icon.replace("_gray", "") };
+                }
+                return resource;
+            })
+        );
+    }
+
+    // Handle level completion
     React.useEffect(() => {
         if (plantLevel === 4) {
-            console.log('level done');
             setLevelCompleted(true);
-            setlevelPageClasses("level-page blured");
-
+            setLevelPageClasses("level-page blured");
         }
     }, [plantLevel]);
 
-    function playAgain() {
-        console.log("Play again");
-        setGameLevel(pervGameLevel=>{return pervGameLevel});
-    }
-
-    
     return (
         <>
             <div className={levelPageClasses}>
                 <div className="main-column">
-                    <Header level={gameLevel}></Header>
-                    <Grid tiles={shuffledTiles} fillIcons={fillIcons} setPlantLevel={setPlantLevel}/>
+                    <Header level={gameLevel} />
+                    <Grid tiles={shuffledTiles} fillIcons={fillIcons} setPlantLevel={setPlantLevel} />
                 </div>
                 <div className="side-column">
-                    <Resources resources={resources}></Resources>
-                    <Plant plantLevel={plantLevel}></Plant>
+                    <Resources resources={resources} />
+                    <Plant plantLevel={plantLevel} />
                 </div>
             </div>
 
-           {levelCompleted && <EndPage classes="pop-up pop-up--small" playAgain={playAgain} nextLevel={()=>{console.log("Next Level")}}></EndPage>}
+            {levelCompleted && (
+                <EndPage classes="pop-up pop-up--small" playAgain={playAgain} nextLevel={nextLevel} />
+            )}
         </>
     );
 };
