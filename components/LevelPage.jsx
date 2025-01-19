@@ -105,7 +105,7 @@ const LevelPage = () => {
                 </div>
             </div>
 
-           {levelCompleted && <EndPage classes="pop-up pop-up--small"></EndPage>}
+           {levelCompleted && <EndPage classes="pop-up pop-up--small" playAgain={()=>{console.log("Play Again")}} nextLevel={()=>{console.log("Next Level")}}></EndPage>}
         </>
     );
 };
