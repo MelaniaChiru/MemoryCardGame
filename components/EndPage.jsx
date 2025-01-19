@@ -3,7 +3,7 @@ const EndPage = () => {
         <section id="endPage">
             <h1>Level Complete!</h1>
             <button>Play Again</button>
-            <button>Next Level</button>
+            <button style={"display:none"}>Next Level</button>
         </section>
      );
 }
