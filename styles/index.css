@@ -195,10 +195,11 @@ img{
 	display: grid;
 	align-items: end;
 	justify-items: center;
+	overflow: hidden;
 }
 
 .plant img {
-	width: 50%;
+	width: 45%;
 }
 
 /* global classes used for display */
