@@ -66,6 +66,7 @@ body {
 	text-align: center;
 }
 
+/* Styling for level 1 */
 .level-page{
 	display: flex;
 	width: 100vw;
@@ -108,8 +109,6 @@ body {
 	background-color: #C1D189;
 }
   
-  
-
 .button--close {
 	position: sticky;
 	top: 1px;
@@ -149,19 +148,37 @@ img{
 	display: grid;
 	align-items: center;
 	justify-items: center;
-	grid-template-columns: repeat(3, 1fr);
 	gap: 1rem;
 	padding: 1rem;
+	grid-template-columns: repeat(4, 1fr);
+}
+
+/* Styling for level 1 */
+.level1 .tiles-grid {
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.level1 .tile {
+	width: 10rem;
+}
+
+/* styling for level 2 */
+.level1 .tiles-grid {
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.level1 .tile {
+	width: 10rem;
 }
 
 .tile{
 	border-radius: 15px;
 	background-color: #DCCAAB;
-	width: 10rem;
 	aspect-ratio: 1;
 	display: grid;
 	align-items: center;
 	justify-content: center;
+	width: 8rem;
 }
 
 
