@@ -1,7 +1,13 @@
-const Grid = ({tiles, fillIcons, setPlantLevel}) => {
+const Grid = ({tiles, fillIcons, setPlantLevel, gameLevel}) => {
 	let count = 0;
 	let selectedTiles = []; // the two tiles selected
 	let eventTile = [];
+	let sunPairs = 0;
+	let toolPairs = 0;
+	let waterPairs = 0;
+
+	console.log("gameLevel: ", gameLevel);
+	
 
 	return ( 
 		<div className="tiles-grid">
@@ -52,9 +58,17 @@ const Grid = ({tiles, fillIcons, setPlantLevel}) => {
 			fillIcons(eventTile[0].target.id);
 
 			//update level at which the plant is
-			setPlantLevel(prevLevel=>{
-				return prevLevel + 1;
-			});
+			if(gameLevel === 1){
+				setPlantLevel(prevLevel=>{
+					return prevLevel + 1;
+				});
+			}
+
+			if (gameLevel === 2) {
+				setPlantLevel(prevLevel=>{
+					return prevLevel + 0.5;
+				});
+			}
 
 			count = 0;
 			eventTile = [];

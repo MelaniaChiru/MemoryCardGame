@@ -112,7 +112,7 @@ const LevelPage = () => {
             <div className={levelPageClasses}>
                 <div className="main-column">
                     <Header level={gameLevel} />
-                    <Grid tiles={shuffledTiles} fillIcons={fillIcons} setPlantLevel={setPlantLevel} />
+                    <Grid tiles={shuffledTiles} fillIcons={fillIcons} setPlantLevel={setPlantLevel} gameLevel={gameLevel}/>
                 </div>
                 <div className="side-column">
                     <Resources resources={resources} />
