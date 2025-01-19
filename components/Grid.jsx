@@ -18,14 +18,20 @@ const Grid = ({tiles, fillIcons}) => {
 			return (<Tile onClick={(e)=>{tileHandler(e)}} id={tile.id} icon={tile.icon}></Tile>);
 		});
 	}
-
+		
 	function tileHandler(e) {
-        if (count < 2) {
-            e.target.children[0].classList.remove("hidden");
-            count = count + 1;
-            eventTile.push(e);
-            t.push(e.target.id);
-        }
+		if(e.target.children[0] != undefined) {
+			if(count < 2) {
+				if(e.target.children[0].classList == "hidden") {
+					e.target.children[0].classList.remove("hidden");
+					count = count + 1;
+					eventTile.push(e);
+					t.push(e.target.id);
+				}else {
+					console.log("Already selected");
+				}
+			}
+		}			
 
         if (count == 2) {
             checkTiles();
