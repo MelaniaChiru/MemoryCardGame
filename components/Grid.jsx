@@ -3,9 +3,6 @@ const Grid = ({tiles, fillIcons, setPlantLevel, gameLevel}) => {
 	let selectedTiles = []; // the two tiles selected
 	let eventTile = [];
 
-	console.log("gameLevel: ", gameLevel);
-	
-
 	return ( 
 		<div className="tiles-grid">
 			{hydrateTiles()}
