@@ -1,6 +1,6 @@
 const Grid = ({tiles, fillIcons, setPlantLevel}) => {
 	let count = 0;
-	let t = []; // the two tiles selected
+	let selectedTiles = []; // the two tiles selected
 	let eventTile = [];
 
 	return ( 
@@ -26,7 +26,7 @@ const Grid = ({tiles, fillIcons, setPlantLevel}) => {
 					e.target.children[0].classList.remove("hidden");
 					count = count + 1;
 					eventTile.push(e);
-					t.push(e.target.id);
+					selectedTiles.push(e.target.id);
 				}else {
 					console.log("Already selected");
 				}
