@@ -1,25 +1,23 @@
 const LevelPage = () => {
     // data for tiles
-    const tiles = [
-        { icon: "/icons/water_drop.svg", id: 1, nbTiles: 2 },
-        { icon: "/icons/tool.svg", id: 2, nbTiles: 2 },
-        { icon: "/icons/sun.svg", id: 3, nbTiles: 2 },
-        { icon: "/icons/dirt.svg", id: -1, nbTiles: 3 }
-    ];
+    let level = 1;
+    let tiles;
+    let [resources, setResources] = React.useState([{ icon: "/icons/water_drop_gray.svg", qty: 1 },]);
+    if(level == 1) {
+        tiles = Level1().tiles;
+        [resources, setResources] = React.useState([Level1().resources[0], Level1().resources[1], Level1().resources[2]]);
+    }else {
+        tiles = Level2().tiles;
+        [resources, setResources] = React.useState([Level2().resources[0], Level2().resources[1], Level2().resources[2]]);
+    }
 
-    const [resources, setResources] = React.useState([
-        { icon: "/icons/water_drop_gray.svg", qty: 1 },
-        { icon: "/icons/tool_gray.svg", qty: 1 },
-        { icon: "/icons/sun_gray.svg", qty: 1 }
-    ]);
-    
     // State to store shuffled tiles
     const [shuffledTiles, setShuffledTiles] = React.useState([]);
 
     // Shuffle the tiles only when the page is loaded
     React.useEffect(() => {
         const allTiles = [];
-        
+
         tiles.forEach(tile => {
             for (let i = 0; i < tile.nbTiles; i++) {
                 allTiles.push(tile);
@@ -28,11 +26,11 @@ const LevelPage = () => {
 
         // Shuffle tiles
         shuffleTiles(allTiles);
-        
+
         // Update shuffledTiles state
         setShuffledTiles(allTiles);
-        
-    }, []); 
+
+    }, []);
 
     // Function to shuffle tiles
     function shuffleTiles(tiles){
