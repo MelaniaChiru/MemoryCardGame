@@ -74,8 +74,10 @@ const LevelPage = () => {
         }
     }, [plantLevel]);
 
+    let levelClassName = `level${gameLevel}`;
+
     return (
-        <>
+        <div className={levelClassName}>
             <div className={levelPageClasses}>
                 <div className="main-column">
                     <Header level={gameLevel} />
@@ -90,6 +92,6 @@ const LevelPage = () => {
             {levelCompleted && (
                 <EndPage classes="pop-up pop-up--small" playAgain={playAgain} nextLevel={nextLevel} />
             )}
-        </>
+        </div>
     );
 };
