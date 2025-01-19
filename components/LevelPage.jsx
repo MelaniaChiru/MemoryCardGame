@@ -80,7 +80,7 @@ const LevelPage = () => {
     return (
         <div className="level-page">
             <div className="main-column">
-                <Header level="1"></Header>
+                <Header level={level}></Header>
                 <Grid tiles={shuffledTiles} fillIcons={fillIcons}
                 />
             </div>
