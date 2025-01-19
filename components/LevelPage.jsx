@@ -79,18 +79,33 @@ const LevelPage = () => {
 
     const [plantLevel, setPlantLevel] = React.useState(1);
 
+    const [levelCompleted, setLevelCompleted] = React.useState(false);
+    const [levelPageClasses, setlevelPageClasses] = React.useState("level-page");
+
+    React.useEffect(() => {
+        if (plantLevel === 4) {
+            console.log('level done');
+            setLevelCompleted(true);
+            setlevelPageClasses("level-page blured");
+
+        }
+    }, [plantLevel]);
+
     
     return (
-        <div className="level-page">
-            <div className="main-column">
-                <Header level={level}></Header>
-                <Grid tiles={shuffledTiles} fillIcons={fillIcons} setPlantLevel={setPlantLevel}/>
+        <>
+            <div className={levelPageClasses}>
+                <div className="main-column">
+                    <Header level={level}></Header>
+                    <Grid tiles={shuffledTiles} fillIcons={fillIcons} setPlantLevel={setPlantLevel}/>
+                </div>
+                <div className="side-column">
+                    <Resources resources={resources}></Resources>
+                    <Plant plantLevel={plantLevel}></Plant>
+                </div>
             </div>
-            <div className="side-column">
-                <Resources resources={resources}></Resources>
-                <Plant plantLevel={plantLevel}></Plant>
-            </div>
-        </div>
 
+           {levelCompleted && <EndPage classes="pop-up pop-up--small"></EndPage>}
+        </>
     );
 };

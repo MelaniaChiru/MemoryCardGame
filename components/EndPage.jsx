@@ -1,9 +1,9 @@
-const EndPage = () => {
+const EndPage = ({classes}) => {
     return ( 
-        <section id="endPage">
+        <section id="endPage" className={classes}>
             <h1>Level Complete!</h1>
-            <button>Play Again</button>
-            <button style={"display:none"}>Next Level</button>
+            <button class="button">Play Again</button>
+            <button class="hidden">Next Level</button>
         </section>
      );
 }
