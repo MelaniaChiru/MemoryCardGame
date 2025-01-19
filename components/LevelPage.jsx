@@ -54,17 +54,46 @@ const LevelPage = () => {
         setGameLevel(prev => prev + 1);
     }
 
-    // Update resources based on matched tiles
+    /**
+     * Changes the colour of the icon corresponding with the tiles that just matched
+     * @param {String} id id of the tiles that just matched
+     */
     function fillIcons(id) {
-        setResources(prevResources =>
-            prevResources.map(resource => {
-                if (resource.icon.includes(`${id}_gray`)) {
-                    return { ...resource, icon: resource.icon.replace("_gray", "") };
-                }
-                return resource;
-            })
-        );
+        if (id === '1') { // water
+            setResources(prevResources => {
+                return prevResources.map(resource => {
+                    if (resource.icon === "/icons/water_drop_gray.svg") {
+                        return { ...resource, icon: "/icons/water_drop.svg" };
+                    }
+                    return resource;
+                });
+            });
+        }
+        if (id === '2') { // tool
+            setResources(prevResources => {
+                return prevResources.map(resource => {
+                    if (resource.icon === "/icons/tool_gray.svg") {
+                        return { ...resource, icon: "/icons/tool.svg" };
+                    }
+                    return resource;
+                });
+            });
+        }
+        if (id === '3') { // sun
+            setResources(prevResources => {
+                return prevResources.map(resource => {
+                    if (resource.icon === "/icons/sun_gray.svg") {
+                        return { ...resource, icon: "/icons/sun.svg" };
+                    }
+                    return resource;
+                });
+            });
+        }
     }
+
+    
+    
+    
 
     // Handle level completion
     React.useEffect(() => {
