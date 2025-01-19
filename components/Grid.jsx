@@ -2,9 +2,6 @@ const Grid = ({tiles, fillIcons, setPlantLevel, gameLevel}) => {
 	let count = 0;
 	let selectedTiles = []; // the two tiles selected
 	let eventTile = [];
-	let sunPairs = 0;
-	let toolPairs = 0;
-	let waterPairs = 0;
 
 	console.log("gameLevel: ", gameLevel);
 	
