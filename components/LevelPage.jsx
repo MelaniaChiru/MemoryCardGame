@@ -98,8 +98,10 @@ const LevelPage = () => {
     // Handle level completion
     React.useEffect(() => {
         if (plantLevel === 4) {
-            setLevelCompleted(true);
-            setLevelPageClasses("level-page blured");
+            setTimeout(()=>{
+                setLevelCompleted(true);
+                setLevelPageClasses("level-page blured");
+            }, 1000);
         }
     }, [plantLevel]);
 
