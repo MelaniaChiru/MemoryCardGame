@@ -1,4 +1,4 @@
-# 🌱 Sprout Quest 
+# 🌱 Memory Card Game
 
 Sprout Quest is a fun and engaging card-matching game where players use memory and strategy to grow a beautiful plant.
 As you advance through levels, the number of cards increases, making the game more challenging.
@@ -23,7 +23,7 @@ To run the project in your local environment, follow these steps:
 
 1. **Clone the repository to your local machine:**
     ```
-    git clone  https://gitlab.com/MelaniaChiru/memory-card-game.git
+    git clone  [https://gitlab.com/MelaniaChiru/memory-card-game.git](https://github.com/MelaniaChiru/MemoryCardGame.git)
     ```
 
 2. **Open the `page.html` file :**
@@ -45,4 +45,4 @@ To run the project in your local environment, follow these steps:
 
 ## Authors and acknowledgment
 Melania Chiru @MelaniaChiru <br>
-Ash Rebelo @robbello
+Ash Rebelo @robbello (Gitlab)
