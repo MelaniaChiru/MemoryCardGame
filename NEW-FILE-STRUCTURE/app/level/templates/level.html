@@ -1,0 +1,32 @@
+{% extends 'base.html'%}
+
+{% block pageTitle %}
+	Sprout Quest - Level {{ level }}
+{% endblock %}
+
+{% block content %}
+	<div class="level">
+		<h1>Level {{ level }} - Seedling</h1>
+		<div class="level__grid grid">
+			{% for i in range(0,9) %}
+				<div class="tile">
+					<img src="{{ url_for('level_bp.static', filename='/icons/sprout.svg') }}" alt="icon of a sprout" class="tile__icon">
+				</div>
+			{% endfor %}
+		</div>
+			
+		<div class="level__resources resources">
+			<h2>Resources</h2>
+			<div class="resources__icons">
+				<img src="{{ url_for('level_bp.static', filename='/icons/sun.svg') }}" alt="icon of a sprout" class="resources__icon">
+				<img src="{{ url_for('level_bp.static', filename='/icons/water_drop.svg') }}" alt="icon of a potted plant" class="resources__icon">
+				<img src="{{ url_for('level_bp.static', filename='/icons/tool.svg') }}" alt="icon of a flower" class="resources__icon">
+			</div>
+		</div>
+
+		<div class="level__plant plant">
+			image of the growing plant goes here
+		</div>
+
+	</div>
+{% endblock %}
