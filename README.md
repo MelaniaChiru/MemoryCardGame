@@ -45,4 +45,4 @@ To run the project in your local environment, follow these steps:
 
 ## Authors and acknowledgment
 Melania Chiru @MelaniaChiru <br>
-Ash Rebelo @robbello (Gitlab)
+Ash Rebelo @ashrebelo
