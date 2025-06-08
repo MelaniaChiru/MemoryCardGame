@@ -1,5 +1,0 @@
-Level Number, Name, Grid Size, Sun Tile, Water Tile, Tractor Tile, Cloud Tile, Bug Tile, Scissor Tile, Dirt Tile
-1,Level 1 -,3,1,1,1,0,0,0,3
-2,Level 2 -,4,2,2,2,0,0,0,4
-3,Level 3 -,0,0,0,0,0,0,0,0
-4,Level 4 -,0,0,0,0,0,0,0,0
