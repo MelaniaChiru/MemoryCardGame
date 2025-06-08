@@ -1,4 +1,5 @@
 from api import api
+from model import Level
 
 @api.route('levels/all', methods=['GET'])
 def all_levels():
