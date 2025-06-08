@@ -15,7 +15,9 @@ def text_to_level_object():
 
 import csv
 def read_from_file():
-    file = open("info_levels.txt", "r")
-    content = file.read()
-    file.close()
+    content =""
+    with open("info_levels.csv", mode = 'r') as file:
+        csvFile = csv.reader(file)
+        for lines in csvFile:
+            content += ",".join(lines) + "\n"
     return content
