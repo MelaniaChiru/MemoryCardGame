@@ -1,5 +1,3 @@
-from flask import jsonify
-from extensions import cache
 from api import api
 
 @api.route('levels/all', methods=['GET'])
