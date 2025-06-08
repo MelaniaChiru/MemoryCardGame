@@ -1,0 +1,21 @@
+.homepage{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 30vh;
+}
+
+.homepage__headings{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 5vh;
+}
+
+.homepage__buttons{
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	gap: 3vh;
+}

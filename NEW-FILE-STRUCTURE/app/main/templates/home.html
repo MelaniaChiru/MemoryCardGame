@@ -1,11 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
-	<h1>Sprout Quest</h1>
-	<p>A memory game for plant lovers</p>
+	<div class="homepage">
+		<div class="homepage__headings">
+			<h1>Sprout Quest</h1>
+			<p>A memory game for plant lovers</p>
+		</div>
 
-	<a href="{{ url_for('level_bp.levels') }}">
-		<button type="button">Start</button>
-	</a>
-	<button type="button">How to play</button>
+		<div class="homepage__buttons">
+			<a href="{{ url_for('level_bp.levels') }}">
+				<button type="button">Start</button>
+			</a>
+			<button type="button">How to play</button>
+		</div>
+	</div>
 {% endblock %}
