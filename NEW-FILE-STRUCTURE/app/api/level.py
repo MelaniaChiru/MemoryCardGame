@@ -3,11 +3,7 @@ from model import Level
 
 @api.route('levels/all', methods=['GET'])
 def all_levels():
-    return ""
-
-
-
-
+    return text_to_level_object()
 
 def text_to_level_object():
     
