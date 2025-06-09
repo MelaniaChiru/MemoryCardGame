@@ -13,5 +13,45 @@
 			</a>
 			<button type="button">How to play</button>
 		</div>
+
+		<div class="homepage__rules hidden">
+			<div class="rules__header">
+				<h2>Rules</h2>
+				<img src="{{ url_for('main_bp.static', filename='/icons/close.svg') }}">
+			</div>
+			<div class="rules__content">
+				<div class="rule-paragraph">
+					<h4>Objective</h4>
+					<p>Match pairs of resource cards to unlock materials to grow your plant. Each sucessful match will contribute to your plan’t progress. But be careful, there are “grass” cards that don’t match, and they don’t help your plant grow!</p>
+				</div>
+
+				<div class="rule-paragraph">
+					<h4>How to play</h4>
+					<ul>
+						<li>
+							Flip any two cards at a time by clicking on them
+						</li>
+						<li>
+							If the two cards match, you earn a resource to help your plant grow! Resources might include water, sunlight, or nutrients.
+						</li>
+						<li>
+							If you flip over a "grass" card, it doesn’t have a match. It won’t help your plant, but don’t worry—you can keep playing until you find the matching pairs.
+						</li>
+						<li>
+							Each level requires a specific number of matches to unlock all the resources needed to complete a stage of your plant’s growth.
+						</li>
+					</ul>
+				</div>
+
+				<div class="rule-paragraph">
+					<h4>Winning the game</h4>
+					<p>Complete all levels by finding the required matches and growing your plant to its full potential. Watch as it blossoms into something amazing with your hard work and focus!</p>
+				</div>
+
+				<div class="rule-paragraph">
+					<p>Are you ready to test your memory and grow a gorgeous plant? Let the matching begin! 🌱</p>
+				</div>
+			</div>
+		</div>
 	</div>
 {% endblock %}
