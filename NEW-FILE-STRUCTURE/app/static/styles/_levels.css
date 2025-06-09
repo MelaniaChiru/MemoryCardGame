@@ -1,4 +1,5 @@
 .levels-container{
+	height: auto;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -27,6 +28,7 @@
 	display: flex;
 	justify-content: space-evenly;
 	flex-wrap: wrap;
+	gap: 2rem;
 }
 
 .level-selection__card{
@@ -81,4 +83,32 @@
 	width: clamp(10rem, 20vw, 15rem);
 	height: clamp(3rem, 5vh, 4rem);
 	font-size: 120%;
+}
+
+
+/* Styling for smaller screens */
+@media (max-width: 700px){
+	.level-selection{
+		flex-direction: column;
+		align-items: center;
+	}
+	.level-selection__card{
+		width: 90%;
+		height: auto;
+		gap: 0;
+		padding: 1rem 0;
+	}
+
+	.card__info p:nth-child(2){
+		display: none;
+	}
+
+	.card img{
+		width: 44px;
+	}
+
+	.card h3{
+		font-size: 1.5rem;
+	}
+
 }
