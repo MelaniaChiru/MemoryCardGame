@@ -106,6 +106,15 @@ footer p{
 	footer p{
 	font-size: 0.7rem;
 	text-align: center;
-}
+	}
 }
 
+/* Stylistic classes */
+
+.hidden {
+	display: none;
+}
+
+.blurred {
+	filter: blur(3px);
+}

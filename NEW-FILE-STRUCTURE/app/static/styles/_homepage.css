@@ -4,6 +4,8 @@
 	align-items: center;
 	justify-content: center;
 	gap: 30vh;
+
+	position: relative;
 }
 
 .homepage__headings{
@@ -18,4 +20,60 @@
 	flex-direction: column;
 	align-items: stretch;
 	gap: 3vh;
+}
+
+.homepage__rules {
+	background-color: var(--green-200);
+	opacity: 0.90;
+	border-radius: 25px;
+	border: 3px solid var(--green-800);
+
+	width: 80vw;
+	height: 70vh;
+	overflow: scroll;
+	padding: 2vh 2vw; 
+
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.homepage__rules h2{
+	color: var(--brown-800);
+	flex: 1;
+	text-align: center;
+}
+
+.homepage__rules img{
+	width: 5vw;
+	max-width: 2.5rem;
+	min-width: 2rem;
+}
+
+.rules__header {
+	display: flex;
+	padding-left: clamp(1rem, 5vw, 2.5rem); /* to adjust for the width of the close icon*/
+}
+
+.rules__content {
+	display: flex;
+	flex-direction: column;
+	gap: 4vh;
+}
+
+.rules__content h4{
+	font-size: clamp(1rem, 2vw, 1.25rem);
+	color: var(--green-900);
+	text-decoration: underline;
+}
+
+.rules__content p, .rules__content ul{
+	font-size: 1rem;
+	color: var(--brown-500);
+}
+
+.rules__content li{
+	list-style: inside;
+	margin-bottom: 1vh;
 }
