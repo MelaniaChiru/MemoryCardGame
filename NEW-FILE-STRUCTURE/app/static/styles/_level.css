@@ -136,3 +136,31 @@
 	left: 50%;
 	transform: translateX(-50%);
 }
+
+/* end of level pop-up */
+.level__end-pop-up{
+	background-color: var(--green-200);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 60vw;
+	height: 40vh;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	justify-content: space-around;
+	border-radius: 50px;
+	border: 4px solid var(--green-800);
+}
+
+.navigation-buttons {
+	display: flex;
+	justify-content: center;
+	gap: 2rem;
+}
+
+.level__end-pop-up a{
+	text-decoration: underline;
+	color: var(--brown-800);
+}

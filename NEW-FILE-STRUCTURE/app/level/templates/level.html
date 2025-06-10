@@ -7,6 +7,7 @@
 {% block content %}
 	<div class="level">
 		<h1>Level {{ level }} - Seedling</h1>
+
 		<div class="level__grid grid">
 			{% for i in range(0,9) %}
 				<div class="grid__tile tile">
@@ -51,6 +52,23 @@
 
 		<div class="level__footer">
 			<a href="{{ url_for('level_bp.levels') }}">Back to levels</a>
+		</div>
+
+		<div class="level__end-pop-up" style="display: none;">
+			<h2>Level Complete!</h2>
+			<div class="navigation-buttons">
+				<a href="#">
+					<button type="button">Previous Level</button>
+				</a>
+				<a href="#">
+					<button type="button">Play again</button>
+				</a>
+
+				<a href="#">
+					<button type="button">Next level</button>
+				</a>
+			</div>
+			<a href="{{ url_for('level_bp.levels') }}">See all levels</a>
 		</div>
 
 	</div>
