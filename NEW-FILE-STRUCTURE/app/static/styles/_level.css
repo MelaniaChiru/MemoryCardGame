@@ -9,7 +9,7 @@
 		"grid plant"
 		"footer footer";
 	
-		gap: 1rem;
+	gap: 1rem;
 }
 
 /* general layout */
@@ -42,10 +42,6 @@
     color: var(--brown-800);
     font-size: larger;
 
-}
-
-.level>*{
-	/* background-color: rgba(150, 0, 255, .3); */
 }
 
 /* grid */
@@ -120,8 +116,9 @@
 .gray-icon-mask{
 	position: absolute;
 	top: 0;
-	left: 0;
-	height: 0%;
+	left: 50%;
+	transform: translateX(-50%);
+	height: 50%;
 	overflow: hidden;
 }
 
@@ -166,7 +163,7 @@
 }
 
 /* Styling for smaller screens */
-@media (max-width: 1200px) {
+@media (max-width: 1200px) { /* medium screens - i.e tablets on horizontal mode*/
 	.level h1{
 		font-size: 3rem;
 		align-self: center;
@@ -180,6 +177,42 @@
 		width: 4rem;
 	}
 }
-@media (max-width: 480px) {
+@media (max-width: 480px) { /* small screens - i.e. phones*/
+	.level{
+		grid-template-columns: 2fr 1fr;
+		grid-template-rows: 2fr 8fr 6fr 1fr;
+
+		grid-template-areas:
+		"header header"
+		"grid grid"
+		"plant resources"
+		"footer footer";
+		height: 95vh;
+	}
+
+	.level h1{
+		font-size: 2rem;
+		text-shadow: 2px 2px 1px #444E2880;
+	}
+
+	.grid {
+		gap: 1rem;
+	}
+
+	.tile__icon {
+		width: 44px;
+	}
+
+	.resources__icons{
+		flex-direction: column;
+	}
+
+	.level__plant img {
+		height: 100%;
+	}
+
+	.resources h2{
+		font-size: 1.2rem;
+	}
 
 }
