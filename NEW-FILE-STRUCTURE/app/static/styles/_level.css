@@ -164,3 +164,22 @@
 	text-decoration: underline;
 	color: var(--brown-800);
 }
+
+/* Styling for smaller screens */
+@media (max-width: 1200px) {
+	.level h1{
+		font-size: 3rem;
+		align-self: center;
+	}
+
+	.tile__icon{
+		width: 70px
+	}
+
+	.resources__icons img{
+		width: 4rem;
+	}
+}
+@media (max-width: 480px) {
+
+}
