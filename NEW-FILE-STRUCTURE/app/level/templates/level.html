@@ -42,7 +42,11 @@
 		</div>
 
 		<div class="level__plant plant">
-			image of the growing plant goes here
+			<img src="{{ url_for('level_bp.static', filename='/images/dirt.png') }}" alt="Illustration of a pile of dirt" class="plant__dirt">
+			<img src="{{ url_for('level_bp.static', filename='/images/growth-1.png') }}" alt="Illustration of a sprout" class="plant__growth-1 hidden">
+			<img src="{{ url_for('level_bp.static', filename='/images/growth-2.png') }}" alt="Illustration of a plant" class="plant__growth-2 hidden">
+			<img src="{{ url_for('level_bp.static', filename='/images/growth-3.png') }}" alt="Illustration of a flower almost in bloom" class="plant__growth-3 hidden">
+			<img src="{{ url_for('level_bp.static', filename='/images/growth-4.png') }}" alt="Illustration of a sunflower" class="plant__growth-4 hidden">
 		</div>
 
 		<div class="level__footer">
