@@ -12,7 +12,10 @@
 			{% for i in range(0,9) %}
 				<div class="grid__tile tile">
 					<div class="tile__wrapper">
-						<img src="{{ url_for('level_bp.static', filename='/icons/sprout.svg') }}" alt="icon of a sprout" class="tile__icon">
+						<div class="tile__front"></div>
+						<div class="tile__back">
+							<img src="{{ url_for('level_bp.static', filename='icons/sprout.svg') }}" alt="icon of a sprout" class="tile__icon">
+						</div>
 					</div>
 				</div>
 			{% endfor %}
