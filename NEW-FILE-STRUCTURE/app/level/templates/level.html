@@ -7,10 +7,13 @@
 {% block content %}
 	<div class="level">
 		<h1>Level {{ level }} - Seedling</h1>
+
 		<div class="level__grid grid">
 			{% for i in range(0,9) %}
-				<div class="tile">
-					<img src="{{ url_for('level_bp.static', filename='/icons/sprout.svg') }}" alt="icon of a sprout" class="tile__icon">
+				<div class="grid__tile tile">
+					<div class="tile__wrapper">
+						<img src="{{ url_for('level_bp.static', filename='/icons/sprout.svg') }}" alt="icon of a sprout" class="tile__icon">
+					</div>
 				</div>
 			{% endfor %}
 		</div>
@@ -18,16 +21,55 @@
 		<div class="level__resources resources">
 			<h2>Resources</h2>
 			<div class="resources__icons">
-				<img src="{{ url_for('level_bp.static', filename='/icons/sun.svg') }}" alt="icon of a sprout" class="resources__icon">
-				<img src="{{ url_for('level_bp.static', filename='/icons/water_drop.svg') }}" alt="icon of a potted plant" class="resources__icon">
-				<img src="{{ url_for('level_bp.static', filename='/icons/tool.svg') }}" alt="icon of a flower" class="resources__icon">
+				<div class="icon-filling-wrapper">
+					<img src="{{ url_for('level_bp.static', filename='/icons/sun.svg') }}" alt="icon of a coloured sun" class="resources__icon">
+					<div class="gray-icon-mask">
+						<img src="{{ url_for('level_bp.static', filename='/icons/sun-gray.svg') }}" alt="icon of a grayed out sun" class="resources__icon--gray">
+					</div>
+				</div>
+				<div class="icon-filling-wrapper">
+					<img src="{{ url_for('level_bp.static', filename='/icons/water_drop.svg') }}" alt="icon of a coloured water drop" class="resources__icon">
+					<div class="gray-icon-mask">
+						<img src="{{ url_for('level_bp.static', filename='/icons/water_drop-gray.svg') }}" alt="icon of a grayed out water drop" class="resources__icon--gray">
+					</div>
+				</div>
+				<div class="icon-filling-wrapper">
+					<img src="{{ url_for('level_bp.static', filename='/icons/tool.svg') }}" alt="icon of a coloured agriculture truck" class="resources__icon">
+					<div class="gray-icon-mask">
+						<img src="{{ url_for('level_bp.static', filename='/icons/tool-gray.svg') }}" alt="icon of a grayed out agriculture truck" class="resources__icon--gray">
+					</div>
+				</div>
 			</div>
 		</div>
 
 		<div class="level__plant plant">
-			image of the growing plant goes here
+			<img src="{{ url_for('level_bp.static', filename='/images/dirt.png') }}" alt="Illustration of a pile of dirt" class="plant__dirt hidden">
+			<img src="{{ url_for('level_bp.static', filename='/images/growth-1.png') }}" alt="Illustration of a sprout" class="plant__growth-1 hidden">
+			<img src="{{ url_for('level_bp.static', filename='/images/growth-2.png') }}" alt="Illustration of a plant" class="plant__growth-2 hidden">
+			<img src="{{ url_for('level_bp.static', filename='/images/growth-3.png') }}" alt="Illustration of a flower almost in bloom" class="plant__growth-3 hidden">
+			<img src="{{ url_for('level_bp.static', filename='/images/growth-4.png') }}" alt="Illustration of a sunflower" class="plant__growth-4">
 		</div>
 
-		<a href="{{ url_for('level_bp.levels') }}">Back to levels</a>
+		<div class="level__footer">
+			<a href="{{ url_for('level_bp.levels') }}">Back to levels</a>
+		</div>
+
+		<div class="level__end-pop-up" style="display: none;">
+			<h2>Level Complete!</h2>
+			<div class="navigation-buttons">
+				<a href="#">
+					<button type="button">Previous Level</button>
+				</a>
+				<a href="#">
+					<button type="button">Play again</button>
+				</a>
+
+				<a href="#">
+					<button type="button">Next level</button>
+				</a>
+			</div>
+			<a href="{{ url_for('level_bp.levels') }}">See all levels</a>
+		</div>
+
 	</div>
 {% endblock %}

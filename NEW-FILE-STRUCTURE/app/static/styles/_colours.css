@@ -1,0 +1,28 @@
+:root {
+	--brown-100: #E8DDCE;
+	--brown-200: #D9C8B0;
+	--brown-250: #D5C7B1;
+	--brown-300: #CBAC83;
+	--brown-500: #7E6D58;
+	--brown-800: #5A4B3B;
+
+	--green-100: #FCFDFA;
+	--green-200: #F1F4E6;
+	--green-300: #E1E8C8;
+	--green-500: #D2DFAB;
+	--green-600: #C4D191;
+	--green-700: #98BA68;
+	--green-800: #9DB04E;
+	--green-850: #444E28;
+	--green-900: #232912;
+
+	/* Color for the icons */
+	--icon-gray: #D8D8D8;
+	--tool-brown: #4E1B11;
+	--water-blue: #6A83D4;
+	--sun-yellow: #FBE97B;
+	--bug-red: #AC3526;
+	--cloud-gray: #8B99AE;
+	--scissor-gray: #B7B7B7;
+	--grass-green: #82A663;
+}

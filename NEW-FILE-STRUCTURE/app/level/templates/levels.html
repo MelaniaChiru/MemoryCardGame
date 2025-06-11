@@ -6,56 +6,64 @@
 
 {% block content %}
 <div class="levels-container">
-	<h1>Select a level</h1>
-	<p>Select a difficulty to start your plant memory journey</p>
-
-	<div class="level-selection">
-		<div class="level-selection__card card">
-			<img src="{{ url_for('level_bp.static', filename='/icons/sprout.svg') }}" alt="icon of a sprout" class="card__icon">
-			<h3>Seedling</h3>
-			<p>3 x 3 grid</p>
-			<p>Perfect for beginners</p>
-			<a href="{{ url_for('level_bp.level', level=1) }}">
-				<button type="button" class="card__button">Start</button>
-			</a>
-		</div>
+	<div class="levels-container__header">
+		<h1>Select a level</h1>
+		<p>Select a difficulty to start your plant memory journey</p>
 	</div>
 
-	<div class="level-selection">
-		<div class="level-selection__card card">
-			<img src="{{ url_for('level_bp.static', filename='/icons/potted_plant.svg') }}" alt="icon of a potted plant" class="card__icon">
-			<h3>Growing</h3>
-			<p>4 x 4 grid</p>
-			<p>For intermidiate players</p>
-			<a href="{{ url_for('level_bp.level', level=2) }}">
-				<button type="button" class="card__button">Start</button>
-			</a>
-		</div>
-	</div>
+	<div class="levels-container__content">
+		<div class="content__selection">
+			<div class="level-selection">
+				<div class="level-selection__card card">
+					<img src="{{ url_for('level_bp.static', filename='/icons/sprout.svg') }}" alt="icon of a sprout" class="card__icon">
+					<h3>Seedling</h3>
+					<div class="card__info">
+						<p>3 x 3 grid</p>
+						<p>Perfect for beginners</p>
+					</div>
+					<a href="{{ url_for('level_bp.level', level=1) }}">
+						<button type="button" class="card__button">Start</button>
+					</a>
+				</div>
 
-	<div class="level-selection">
-		<div class="level-selection__card card">
-			<img src="{{ url_for('level_bp.static', filename='/icons/flower.svg') }}" alt="icon of a flower" class="card__icon">
-			<h3>Mature</h3>
-			<p>5 x 5 grid</p>
-			<p>If you want a challenge</p>
-			<a href="{{ url_for('level_bp.level', level=3) }}">
-				<button type="button" class="card__button">Start</button>
-			</a>
+				<div class="level-selection__card card">
+					<img src="{{ url_for('level_bp.static', filename='/icons/potted_plant.svg') }}" alt="icon of a potted plant" class="card__icon">
+					<h3>Growing</h3>
+					<div class="card__info">
+						<p>4 x 4 grid</p>
+						<p>For intermidiate players</p>
+					</div>
+					<a href="{{ url_for('level_bp.level', level=2) }}">
+						<button type="button" class="card__button">Start</button>
+					</a>
+				</div>
+			
+				<div class="level-selection__card card">
+					<img src="{{ url_for('level_bp.static', filename='/icons/flower.svg') }}" alt="icon of a flower" class="card__icon">
+					<h3>Mature</h3>
+					<div class="card__info">
+						<p>5 x 5 grid</p>
+						<p>If you want a challenge</p>
+					</div>
+					<a href="{{ url_for('level_bp.level', level=3) }}">
+						<button type="button" class="card__button">Start</button>
+					</a>
+				</div>
+			
+				<div class="level-selection__card card">
+					<img src="{{ url_for('level_bp.static', filename='/icons/zen.svg') }}" alt="icon of a lotus flower" class="card__icon">
+					<h3>Seedling</h3>
+					<div class="card__info">
+						<p>4 x 6 grid</p>
+						<p>No timer, no stress</p>
+					</div>
+					<a href="{{ url_for('level_bp.level', level=4) }}">
+						<button type="button" class="card__button">Start</button>
+					</a>
+				</div>
+			</div>
 		</div>
+		<a href="{{ url_for('main_bp.home') }}"> Back to homepage</a>
 	</div>
-
-	<div class="level-selection">
-		<div class="level-selection__card card">
-			<img src="{{ url_for('level_bp.static', filename='/icons/zen.svg') }}" alt="icon of a lotus flower" class="card__icon">
-			<h3>Seedling</h3>
-			<p>4 x 6 grid</p>
-			<p>No timer, no stress</p>
-			<a href="{{ url_for('level_bp.level', level=4) }}">
-				<button type="button" class="card__button">Start</button>
-			</a>
-		</div>
-	</div>
-
-	<a href="{{ url_for('main.home') }}"> Back to homepage</a>
+</div>
 {% endblock %}
