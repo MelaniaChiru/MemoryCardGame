@@ -1,5 +1,6 @@
 from api import api
 from model import Level
+from flask import jsonify
 
 @api.route('levels', methods=['GET'])
 def all_levels():
