@@ -1,6 +1,6 @@
 [
-    {"level_num": 1, "name": "Seedling", "row": 3, "column": 3, "sun" : 1, "water": 1, "tactor": 1, "cloud" : 0, "bug": 0, "scissor": 0, "dirt":3},
-    {"level_num": 2, "name": "Growing", "row": 4, "column": 4, "sun" : 2, "water": 2, "tactor": 2, "cloud" : 1, "bug": 0, "scissor": 0, "dirt":2},
-    {"level_num": 3, "name": "Mature", "row": 6, "column": 6, "sun" : 3, "water": 3, "tactor": 3, "cloud" : 2, "bug": 1, "scissor": 2, "dirt":8},
-    {"level_num": 4, "name": "Zen Mode", "row": 4, "column": 6, "sun" : 4, "water": 4, "tactor": 4, "cloud" : 0, "bug": 0, "scissor": 0, "dirt":8}
+    {"level_num": 1, "name": "Seedling", "row": 3, "column": 3, "sun" : 1, "water": 1, "tactor": 1, "cloud" : 0, "bug": 0, "scissor": 0, "grass":3},
+    {"level_num": 2, "name": "Growing", "row": 4, "column": 4, "sun" : 2, "water": 2, "tactor": 2, "cloud" : 1, "bug": 0, "scissor": 0, "grass":2},
+    {"level_num": 3, "name": "Mature", "row": 6, "column": 6, "sun" : 3, "water": 3, "tactor": 3, "cloud" : 2, "bug": 1, "scissor": 2, "grass":8},
+    {"level_num": 4, "name": "Zen Mode", "row": 4, "column": 6, "sun" : 4, "water": 4, "tactor": 4, "cloud" : 0, "bug": 0, "scissor": 0, "grass":8}
 ]
