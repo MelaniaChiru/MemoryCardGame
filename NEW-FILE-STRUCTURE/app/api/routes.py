@@ -1,7 +1,7 @@
 from api import api
 from model import Level
 
-@api.route('levels/all', methods=['GET'])
+@api.route('levels', methods=['GET'])
 def all_levels():
     return text_to_level_object()
 
