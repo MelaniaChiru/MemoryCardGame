@@ -8,9 +8,6 @@ def all_levels():
 
 import json
 def read_from_file():
-    content =""
-    with open("info_levels.csv", mode = 'r') as file:
-        csvFile = csv.reader(file)
-        for lines in csvFile:
-            content += ",".join(lines) + "\n"
-    return content
+    with open('info_level.json', 'r') as file:
+        data = json.load(file)
+        return data
