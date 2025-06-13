@@ -1,5 +1,5 @@
 import { flipTile } from './_level.js';
-import {displayRulesPopUp} from './_homepage.js'
+import {displayRulesPopUp, hideRulesPopUp} from './_homepage.js'
 
 /**
  * Only call filpTile() function if active page is a specific level page
@@ -13,4 +13,5 @@ if (/^\/levels\/\d+$/.test(window.location.pathname)) {
 
 if (window.location.pathname === ("/") || window.location.pathname === ("/home")) {
 	displayRulesPopUp();
+	hideRulesPopUp();
 }
