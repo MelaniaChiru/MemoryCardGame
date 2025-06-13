@@ -6,6 +6,12 @@ from flask import jsonify
 def all_levels():
     return jsonify(read_from_file())
 
+@api.route('levels/<int:level_num>', methods=['GET'])
+def level_by_num(level_num):
+    
+    
+    return ""
+
 import json
 def read_from_file():
     with open('info_level.json', 'r') as file:
