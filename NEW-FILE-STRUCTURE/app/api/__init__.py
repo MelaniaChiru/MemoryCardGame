@@ -1,5 +1,5 @@
 from flask import Blueprint
 
-api = Blueprint('api', __name__)
+api_bp = Blueprint('api_bp', __name__)
 
-from api import level
+from . import level
