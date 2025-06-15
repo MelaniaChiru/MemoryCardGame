@@ -1,7 +1,7 @@
 '''
 	Routes for the level module.
 '''
-import requests;
+import requests
 from model import Level
 
 from flask import render_template
