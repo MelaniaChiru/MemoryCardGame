@@ -1,12 +1,12 @@
-from api import api
+from . import api_bp
 from model import Level
 from flask import jsonify
 
-@api.route('levels', methods=['GET'])
+@api_bp.route('levels', methods=['GET'])
 def all_levels():
     return jsonify(read_from_file())
 
-@api.route('levels/<int:level_num>', methods=['GET'])
+@api_bp.route('levels/<int:level_num>', methods=['GET'])
 def level_by_num(level_num):
     
     
