@@ -18,4 +18,4 @@ import json
 def read_from_file():
     with open('info_level.json', 'r') as file:
         data = json.load(file)
-        return data
+        return data, 200
